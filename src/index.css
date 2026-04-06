@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+:root {
+  --font-sans: "Open Sans", "Segoe UI", sans-serif;
+  --font-display: "Open Sans", "Segoe UI", sans-serif;
+  color: #f3f4f6;
+  background:
+    radial-gradient(circle at top, rgba(253, 107, 58, 0.12), transparent 26%),
+    radial-gradient(circle at 20% 10%, rgba(255, 179, 71, 0.05), transparent 20%),
+    linear-gradient(180deg, #252526 0%, #1f1f21 45%, #171719 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top, rgba(253, 107, 58, 0.12), transparent 26%),
+    radial-gradient(circle at 20% 10%, rgba(255, 179, 71, 0.05), transparent 20%),
+    linear-gradient(180deg, #252526 0%, #1f1f21 45%, #171719 100%);
+  color: #f3f4f6;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 90%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(230, 82, 34, 0.18), transparent 22%),
+    radial-gradient(circle at 80% 30%, rgba(255, 166, 77, 0.06), transparent 18%);
+  filter: blur(24px);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(255, 130, 71, 0.26);
+  color: #f9fafb;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.graphite-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(49, 49, 52, 0.95), rgba(28, 28, 31, 0.98));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35),
+    0 28px 80px rgba(0, 0, 0, 0.38),
+    18px 18px 36px rgba(0, 0, 0, 0.36),
+    -10px -10px 28px rgba(255, 255, 255, 0.02);
+}
+
+.graphite-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 132, 81, 0.55) 0%,
+    rgba(255, 255, 255, 0.06) 22%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.graphite-card::after {
+  content: "";
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  top: -16px;
+  height: 68px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 84, 48, 0.34) 0%, rgba(255, 84, 48, 0) 72%);
+  filter: blur(18px);
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.graphite-panel {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(28, 28, 31, 0.72);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 20px 60px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.graphite-button-primary {
+  background: linear-gradient(180deg, #f6f7fb 0%, #d6d8de 100%);
+  color: #171719;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 14px 30px rgba(0, 0, 0, 0.28);
+}
+
+.graphite-button-primary:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #e7e8ec 100%);
+}
+
+.graphite-button-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(61, 61, 66, 0.92), rgba(35, 35, 39, 0.98));
+  color: #f5f5f5;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 16px 30px rgba(0, 0, 0, 0.22);
+}
+
+.graphite-button-secondary:hover {
+  border-color: rgba(255, 162, 122, 0.34);
+}
+
+.graphite-chip {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e5e7eb;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.graphite-input {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(11, 11, 13, 0.3);
+  color: #f8fafc;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.graphite-input::placeholder {
+  color: rgba(226, 232, 240, 0.38);
+}
+
+.graphite-input:focus {
+  border-color: rgba(255, 145, 102, 0.5);
+  outline: none;
+}
